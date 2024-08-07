@@ -20,6 +20,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import Image from "next/image";
 
 function App() {
   const pColor = "bg-[#1f193f]";
@@ -90,8 +91,10 @@ function App() {
           </div>
           <div className="right  sm:col-span-5 items-center">
             <div className=" flex justify-center w-full sm:mt-[10rem]">
-              <img
+              <Image
                 src="/images/mobile.png"
+                height={700}
+                width={380}
                 className="w-full max-w-[380px] object-cover"
                 alt="phone"
               />
@@ -107,39 +110,42 @@ export default App;
 
 //create a mobile nav using shadcn sheet component and react-icons
 
-export function MobileNav() {
+const MobileNav = () => {
   return (
-    <Sheet>
-      <SheetTrigger>
-        <AlignRight />
-      </SheetTrigger>
-      <SheetContent className="bg-slate-300">
-        <SheetHeader>
-          <SheetTitle>Edit profile</SheetTitle>
-          <SheetDescription>
-            Make changes to your profile here. Click save when you're done.
-          </SheetDescription>
-        </SheetHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
-              Name
-            </Label>
-            <Input id="name" value="Pedro Duarte" className="col-span-3" />
+    <>
+      <Sheet>
+        <SheetTrigger>
+          <AlignRight />
+        </SheetTrigger>
+        <SheetContent className="bg-slate-300">
+          <SheetHeader>
+            <SheetTitle>Edit profile</SheetTitle>
+            <SheetDescription>
+              Make changes to your profile here. Click save when you&apos;re
+              done.
+            </SheetDescription>
+          </SheetHeader>
+          <div className="grid gap-4 py-4">
+            <div className="grid grid-cols-4 items-center gap-4">
+              <Label htmlFor="name" className="text-right">
+                Name
+              </Label>
+              <Input id="name" value="Pedro Duarte" className="col-span-3" />
+            </div>
+            <div className="grid grid-cols-4 items-center gap-4">
+              <Label htmlFor="username" className="text-right">
+                Username
+              </Label>
+              <Input id="username" value="@peduarte" className="col-span-3" />
+            </div>
           </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
-              Username
-            </Label>
-            <Input id="username" value="@peduarte" className="col-span-3" />
-          </div>
-        </div>
-        <SheetFooter>
-          <SheetClose asChild>
-            <Button type="submit">Save changes</Button>
-          </SheetClose>
-        </SheetFooter>
-      </SheetContent>
-    </Sheet>
+          <SheetFooter>
+            <SheetClose asChild>
+              <Button type="submit">Save changes</Button>
+            </SheetClose>
+          </SheetFooter>
+        </SheetContent>
+      </Sheet>{" "}
+    </>
   );
-}
+};
