@@ -94,6 +94,7 @@ function App() {
               <Image
                 src="/images/mobile.png"
                 height={700}
+                priority
                 width={380}
                 className="w-full max-w-[380px] object-cover"
                 alt="phone"
